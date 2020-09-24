@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <form method="post" class="form-group">
+            {% csrf_token %}
+
+            {{form}}
+            <button type="submit" class="btn btn-success">Login</button>
+
+        </form>
+
+    </body>
+</html>
