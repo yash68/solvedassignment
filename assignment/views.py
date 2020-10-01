@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .models import PaymentDetails
 import razorpay
+
 client = razorpay.Client(auth = ("rzp_test_FiqCIVEIZriREW","zm5Q6yKVvM19FbG0egxN5RJm"))
         
 
@@ -63,6 +65,8 @@ def payment(request):
         order_id = response['id']
         order_status = response['status']
 
+        details = PaymentDetails.objects.create(username = request.user, amount = order_amount/100, currency = order_currency, receipt = order_receipt, orderid = order_id, status = order_status )
+        details.save()
         if order_status=='created':
 
             # Server data for user convinience
