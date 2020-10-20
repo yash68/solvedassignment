@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}
+    Solutions of NMIMS
+          {% endblock title %}
+  </title>
+</head>
+<body>
+{% block content %}
+
+
+<div class="site-section bg-image overlay" style="background-image: url("static/images/hero_1.jpg");">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-sm  testimony">
+            <br>
+<br>
+<br>
+
+
+            <h3 class="mb-4 text-center" style="font-size:250%;">Request your special solution </h3>
+            <br>
+            <div class="col-lg-6 text-center mt-auto form-box">
+             <form method="POST" >
+                    {% csrf_token %}
+                    <h3 class="h4 text-black mb-4">Fill up your details</h3>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name = "fullname" placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" name = "email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name = "contact" placeholder="Contact number">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name = "subject" placeholder="Subject name">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name = "college" placeholder="College name">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name = "mention" placeholder="Special mention">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" name="requested_assignment" class="btn btn-primary btn-pill" value="Submit">
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+
+  </body>
+  </html>

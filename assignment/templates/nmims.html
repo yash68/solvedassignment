@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}
+    Solutions of NMIMS
+          {% endblock title %}
+  </title>
+</head>
+<body>
+{% block content %}
+
+
+<div class="site-section bg-image overlay" style="background-image: url("static/images/hero_1.jpg");">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-sm  testimony">
+          	<br>
+<br>
+<br>
+
+
+            <h3 class="mb-4 text-center" style="font-size:250%;">Solutions of Assignments </h3>
+            <br>
+            <blockquote>
+              <ul>
+              	<li><b>Post Graduate Diploma Programs (2 Years, Eligibility Graduation)</b></li>
+              		<ul>
+              			<li><a href = "{% url 'solution' "FM-2" %}"> Financial Management</a></li>
+              			<li><a href = "{% url 'solution' "MM-2" %}">Marketing Management</a></li>
+              			<li><a href = "{% url 'solution' "ITM-2" %}">International Trade Management</a></li>
+              			<li><a href = "{% url 'solution' "HRM-2" %}">Human Resource Management</a></li>
+              			<li><a href = "{% url 'solution' "SCM-2" %}">Supply Chain Management</a></li>
+              			<li><a href = "{% url 'solution' "BM-2" %}">Business Management</a></li>
+              			<li><a href = "{% url 'solution' "BFM-2" %}">Banking and Finance Management</a></li>
+              			<li><a href = "{% url 'solution' "RM-2" %}">Retail Management</a></li>
+              			<li><a href = "{% url 'solution' "ITSM-2" %}">Information Technology and Systems Management</a></li>
+              			<li><a href = "{% url 'solution' "OM-2" %}">Operations Management</a></li>
+              		</ul>
+              	<li><b>Diploma Programs (1 Year, Eligibility HSC / Diploma)</b></li>
+              		<ul>
+              			<li><a href = "{% url 'solution' "FM-1" %}">Financial Management</a></li>
+              			<li><a href = "{% url 'solution' "MM-1" %}">Marketing Management</a></li>
+              			<li><a href = "{% url 'solution' "ITM-1" %}">International Trade Management</a></li>
+              			<li><a href = "{% url 'solution' "HRM-1" %}">Human Resource Management</a></li>
+              			<li><a href = "{% url 'solution' "SCM-1" %}">Supply Chain Management</a></li>
+              			<li><a href = "{% url 'solution' "BM-1" %}">Business Management</a></li>
+              			<li><a href = "{% url 'solution' "BFM-1" %}">Banking and Finance Management</a></li>
+              			<li><a href = "{% url 'solution' "RM-1" %}">Retail Management</a></li>
+              			<li><a href = "{% url 'solution' "OM-1" %}">Operations Management</a></li>
+					</ul>
+				<li><b>Certificate Programs (6 Months, Eligibility SSC)</b></li>
+					<ul>
+						<li><a href = "{% url 'solution' "BM-6" %}">Business Management</a></li>
+						<li><a href = "{% url 'solution' "CC-6" %}">Corporate Communication</a></li>
+						<li><a href = "{% url 'solution' "ITM-6" %}">IT Management</a></li>
+						<li><a href = "{% url 'solution' "OM-6" %}">Operations Management</a></li>
+						<li><a href = "{% url 'solution' "PM-6" %}">Project Management</a></li>
+					</ul>
+				<li><b>Professional Diploma Programs (1 Year, Eligibility HSC / Diploma)</b></li>
+					<ul>
+						<li><a href = "{% url 'solution' "DM-1" %}">Digital Marketing</a></li>
+						<li><a href = "{% url 'solution' "WM-1" %}">Wealth Management</a></li>
+
+					</ul>
+				<li><b>Distance MBA Program (15 Months, Eligibility Graduation with 55% or more + 3 years of Work Experience)</b></li>
+					<ul>
+						<li><a href = "{% url 'solution' "MBAWX" %}">MBA (WX) with specialization</a></li>
+						<li><a href = "{% url 'solution' "Marketing" %}">Marketing</a></li>
+						<li><a href = "{% url 'solution' "LS" %}">Leadership and Strategy</a></li>
+						<li><a href = "{% url 'solution' "OSC" %}">Operations and Supply Chain</a></li>
+						<li><a href = "{% url 'solution' "AF" %}">Applied Finance</a></li>
+						<li><a href = "{% url 'solution' "BA" %}">Business Analytics</a></li>
+					</ul>
+				<li><b>Masters Programs (2 Years, Eligibility Graduation)</b></li>
+					<ul>
+						<li><a href = "{% url 'solution' "MSCFM" %}">M. Sc. Applied Finance</a></li>
+						<li><a href = "{% url 'solution' "MBA" %}">Masters of Business Administration (15 months)</a></li>
+					</ul>
+				<li><b>Bachelors Programs (3 Years, Eligibility HSC / Diploma)</b></li>
+					<ul>
+						<li><a href = "{% url 'solution' "Bcom" %}">Bachelor of Commerce (B. Com)</a></li>
+						<li><a href = "{% url 'solution' "Bba" %}">Bachelor in Business Administration (BBA)</a></li>
+					</ul>
+              </ul>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
+</body>
+</html>

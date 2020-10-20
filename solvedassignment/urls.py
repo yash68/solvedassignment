@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from assignment import views
-
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('register/', views.register, name = "register"),
@@ -24,4 +25,8 @@ urlpatterns = [
     path('logout/', views.signout, name = "logout"),
     path('payment/', views.payment, name = "payment"),
     path('', views.index, name = "home"),
-]
+    path('nmims', views.nmims, name = "nmims"),
+    path('amity', views.amity, name = "amity"),
+    path('request', views.requested_assignment, name = 'requested'),
+    path('assignment/<str:sub_code>', views.assignment_sol, name= "solution")
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
