@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}
+    {% if assigns %}
+    {{assigns.assignment_title}}
+    {% else %}
+    Assignment Not found
+    {% endif %}
+          {% endblock title %}
+
+  </title>
+</head>
+<body>
+{% block content %}
+
+
+<div class="site-section bg-image overlay" style="background-image: url("static/images/hero_1.jpg");">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-sm  testimony">
+          	<br>
+<br>
+<br>
+          {% if assignNot %}
+            <h3 class="mb-4 text-center" style="font-size:250%;"> Assignment is not available. Get your special Assignment, request for it from <a href={% url 'requested' %}>here</a>. </h3>
+
+
+          {% elif assigns %}
+            <h3 class="mb-4 text-center" style="font-size:250%;"> {{assigns.assignment_title}} </h3>
+            <br>
+            <blockquote>
+              <h3>{{ assigns.subject }}</h3>
+              <h3>{{ assigns.college }}</h3>
+              <h3>{{assigns.assignment_description}}</h3>
+            </blockquote>
+            {% if user.is_authenticated %}
+            
+            {% if permission == "Allowed" %}
+
+            <a href="files/{{ assigns.assignment_file }}" class="btn btn-primary py-3 px-5 btn-pill">Get your Assignment</a>
+            {% else %}
+            <form method="POST"> 
+          {% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_FiqCIVEIZriREW"
+    data-amount="20000"
+    data-currency="INR"
+    data-order_id="{{ order_id }}"
+    data-buttontext="Buy your assignment"
+    data-name="Acme Corp"
+    data-description="Buying assignment"
+    data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpWzPOB8s9WRX7JXZ96x1oPESu-eoN5YUFfDKcebTKFn7piPBS&usqp=CAU"
+    data-prefill.name="Garg Sahab"
+    data-prefill.email="gargyash512@gmail.com"
+    data-prefill.contact="9811956616"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+{% endif %}
+            {% else %}
+            <a href="{% url 'home' %}" class="btn btn-primary py-3 px-5 btn-pill">Login/Signup to buy assignment</a>
+            {% endif %}
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+  </body>
+  </html>
