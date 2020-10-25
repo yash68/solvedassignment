@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/myprofilecss.css' %}">
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
@@ -71,7 +71,7 @@
                 Profile
             </a>
                     <div class="dropdown-menu" aria-labelledby="navDropDownLink">
-                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href="{% url 'myprofile' %}">My Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     </div>

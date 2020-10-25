@@ -60,10 +60,12 @@ def assignment_sol(request, sub_code):
 
 def nmims(request):
     return render(request, "nmims.html")
-
  
 def amity(request):
     return render(request, "amity.html")
+
+def myprofile(request):
+    return render(request, "myprofile.html")
 
 def signin(request):
 
