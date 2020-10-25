@@ -46,7 +46,7 @@ class RequestedAssignment(models.Model):
 	def __str__(self):
 		return self.fullname
 
-'''
+
 class MyProfile(models.Model):
 
 	colleges = [
@@ -68,6 +68,3 @@ class MyProfile(models.Model):
 		if not self.email:
 			self.email = self.user.email
 		super(MyProfile, self).save(*args, **kwargs)
-
-
-'''

@@ -28,5 +28,6 @@ urlpatterns = [
     path('nmims', views.nmims, name = "nmims"),
     path('amity', views.amity, name = "amity"),
     path('request', views.requested_assignment, name = 'requested'),
+    path('profile', views.myprofile, name = 'myprofile'),
     path('assignment/<str:sub_code>', views.assignment_sol, name= "solution")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
